@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Админ-панель — Голос Города">
+    <title>Админ-панель — Голос Города</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/image.ico">
+    <link rel="apple-touch-icon" href="images/image.ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <a href="./" class="header__logo">
+                    <img src="images/logo.png" alt="Голос Города" class="header__logo-img">
+                </a>
+                <ul class="header__menu">
+                    <li><a href="./" class="header__link">Главная</a></li>
+                    <li><a href="ideas.html" class="header__link">Все идеи</a></li>
+                    <li><a href="news.html" class="header__link">Новости</a></li>
+                    <li><a href="results.html" class="header__link">Реализовано</a></li>
+                    <li><a href="about.html" class="header__link">О портале</a></li>
+                </ul>
+                <div class="header__auth" id="header-auth">
+                    <a href="login.html" class="button button--secondary">Войти</a>
+                    <a href="register.html" class="button button--primary">Регистрация</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header page-header--admin">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="./">Главная</a>
+                <span>/</span>
+                <span>Админ-панель</span>
+            </nav>
+            <h1 class="page-header__title">Админ-панель
+            </h1>
+            <p class="page-header__subtitle">Модерация идей</p>
+        </div>
+    </section>
+
+    <section class="admin-section">
+        <div class="container">
+            <div class="admin-tabs">
+                <button class="admin-tab admin-tab--active" data-status="pending">На модерации</button>
+                <button class="admin-tab" data-status="approved">Опубликовано</button>
+                <button class="admin-tab" data-status="rejected">Отклонено</button>
+            </div>
+
+            <div class="admin-ideas" id="admin-ideas">
+                <div class="ideas__loading" id="admin-loading">
+                    <div class="spinner"></div>
+                    <p>Загрузка...</p>
+                </div>
+            </div>
+
+            <div class="admin-empty" id="admin-empty" style="display: none;">
+                <p>Нет идей для отображения</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="images/logo.png" alt="Голос Города" class="footer__logo">
+                    <p class="footer__description">Платформа гражданских инициатив для жителей города</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Голос Города</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="toast-container" id="toast-container"></div>
+    <script src="js/auth.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', () => initAdminPage());</script>
+</body>
+
+</html>

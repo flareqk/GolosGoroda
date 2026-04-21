@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Голос Города - платформа для подачи идей по благоустройству города и голосования за лучшие предложения">
+    <title>Голос Города — Платформа гражданских инициатив</title>
+    <link rel="icon" type="image/png" href="images/image.ico">
+    <link rel="apple-touch-icon" href="images/image.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <a href="./" class="header__logo">
+                    <img src="images/logo.png" alt="Голос Города" class="header__logo-img">
+                </a>
+                <ul class="header__menu">
+                    <li><a href="./" class="header__link header__link--active">Главная</a></li>
+                    <li><a href="ideas.html" class="header__link">Все идеи</a></li>
+                    <li><a href="news.html" class="header__link">Новости</a></li>
+                    <li><a href="results.html" class="header__link">Реализовано</a></li>
+                    <li><a href="about.html" class="header__link">О портале</a></li>
+                </ul>
+                <div class="header__auth" id="header-auth">
+                    <a href="login.html" class="button button--secondary">Войти</a>
+                    <a href="register.html" class="button button--primary">Регистрация</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">Ваш голос формирует<br>будущее города</h1>
+                <p class="hero__subtitle">
+                    Платформа для подачи идей по благоустройству.
+                    Предлагайте, голосуйте, следите за реализацией.
+                </p>
+                <div class="hero__actions">
+                    <a href="submit.html" class="button button--primary button--large">
+                        Предложить идею
+                    </a>
+                    <a href="#ideas" class="button button--secondary button--large">
+                        Смотреть идеи
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="stats">
+        <div class="container">
+            <div class="stats__grid">
+                <div class="stats__item">
+                    <span class="stats__number" id="stat-total">0</span>
+                    <span class="stats__label">Идей подано</span>
+                </div>
+                <div class="stats__item">
+                    <span class="stats__number" id="stat-voting">0</span>
+                    <span class="stats__label">На голосовании</span>
+                </div>
+                <div class="stats__item">
+                    <span class="stats__number" id="stat-implemented">0</span>
+                    <span class="stats__label">Реализовано</span>
+                </div>
+                <div class="stats__item">
+                    <span class="stats__number" id="stat-votes">0</span>
+                    <span class="stats__label">Голосов отдано</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Как это работает</h2>
+            <div class="timeline">
+                <div class="timeline__step">
+                    <div class="timeline__marker">1</div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Подайте идею</h3>
+                        <p class="timeline__text">Опишите, что улучшить в городе</p>
+                    </div>
+                </div>
+                <div class="timeline__step">
+                    <div class="timeline__marker">2</div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Модерация</h3>
+                        <p class="timeline__text">Проверка и публикация</p>
+                    </div>
+                </div>
+                <div class="timeline__step">
+                    <div class="timeline__marker">3</div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Голосование</h3>
+                        <p class="timeline__text">Жители выбирают лучшие идеи</p>
+                    </div>
+                </div>
+                <div class="timeline__step timeline__step--final">
+                    <div class="timeline__marker timeline__marker--final">✓</div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Реализация</h3>
+                        <p class="timeline__text">Идея воплощается в жизнь!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="ideas" id="ideas">
+        <div class="container">
+            <div class="ideas__header">
+                <h2 class="section-title">Популярные идеи</h2>
+            </div>
+
+            <div class="ideas__grid" id="ideas-grid">
+                
+            </div>
+
+            <div class="ideas__loading" id="ideas-loading">
+                <div class="spinner"></div>
+                <p>Загрузка идей...</p>
+            </div>
+
+            <div class="ideas__empty" id="ideas-empty" style="display: none;">
+                <p>Идеи не найдены</p>
+            </div>
+
+            <div class="ideas__footer">
+                <a href="ideas.html" class="button button--outline button--large">Смотреть все идеи</a>
+            </div>
+        </div>
+    </section>
+
+
+
+    
+    <section class="about-preview" id="about">
+        <div class="container">
+            <h2 class="section-title">О портале</h2>
+            <div class="about-preview__content">
+                <div class="about-preview__icon"><img src="images/landmark.svg" alt="" class="about-preview__icon-img">
+                </div>
+                <p class="about-preview__text">
+                    «Голос Города» — платформа для подачи и голосования за идеи по благоустройству города.
+                </p>
+                <a href="about.html" class="button button--secondary">Подробнее о портале</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="cta">
+        <div class="container">
+            <div class="cta__content">
+                <h2 class="cta__title">Будьте в курсе</h2>
+                <p class="cta__text">Следите за новостями платформы и узнавайте о реализованных проектах!</p>
+                <a href="news.html" class="button button--white button--large">
+                    Читать новости
+                </a>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="images/logo.png" alt="Голос Города" class="footer__logo">
+                    <p class="footer__description">
+                        Платформа гражданских инициатив для жителей города
+                    </p>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__heading">Навигация</h4>
+                    <ul>
+                        <li><a href="./">Главная</a></li>
+                        <li><a href="ideas.html">Все идеи</a></li>
+                        <li><a href="submit.html">Подать идею</a></li>
+                        <li><a href="results.html">Реализовано</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__heading">Информация</h4>
+                    <ul>
+                        <li><a href="about.html">О портале</a></li>
+                        <li><a href="news.html">Новости</a></li>
+                        <li><a href="#">Правила</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                    <div class="footer__social">
+                        <a href="https://t.me/" target="_blank" rel="noopener noreferrer" class="footer__social-link"
+                            title="Telegram">
+                            <img src="images/telegram.svg" alt="Telegram">
+                        </a>
+                        <a href="https://vk.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link"
+                            title="ВКонтакте">
+                            <img src="images/vkontakte.svg" alt="ВКонтакте">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__app">
+                <div class="footer__app-content">
+                    <p class="footer__app-text">Мобильное приложение <span>Голос Города</span></p>
+                    <div class="footer__app-buttons">
+                        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer"
+                            class="footer__app-btn">
+                            <img src="images/apple_logo.svg" alt="Apple">
+                            <div class="footer__app-btn-text">
+                                <span class="footer__app-btn-label">Скачать в</span>
+                                <span class="footer__app-btn-store">App Store</span>
+                            </div>
+                        </a>
+                        <a href="https://play.google.com" target="_blank" rel="noopener noreferrer"
+                            class="footer__app-btn">
+                            <img src="images/google_play_logo.svg" alt="Google Play">
+                            <div class="footer__app-btn-text">
+                                <span class="footer__app-btn-label">Скачать в</span>
+                                <span class="footer__app-btn-store">Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Голос Города. Школьно-городской проект.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

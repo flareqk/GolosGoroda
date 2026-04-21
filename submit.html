@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Подать идею по благоустройству города на платформе Голос Города">
+    <title>Подать идею — Голос Города</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/image.ico">
+    <link rel="apple-touch-icon" href="images/image.ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <a href="./" class="header__logo">
+                    <img src="images/logo.png" alt="Голос Города" class="header__logo-img">
+                </a>
+                <ul class="header__menu">
+                    <li><a href="./" class="header__link">Главная</a></li>
+                    <li><a href="ideas.html" class="header__link">Все идеи</a></li>
+                    <li><a href="news.html" class="header__link">Новости</a></li>
+                    <li><a href="results.html" class="header__link">Реализовано</a></li>
+                    <li><a href="about.html" class="header__link">О портале</a></li>
+                </ul>
+                <div class="header__auth" id="header-auth">
+                    <a href="login.html" class="button button--secondary">Войти</a>
+                    <a href="register.html" class="button button--primary">Регистрация</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    
+    <section class="page-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="./">Главная</a>
+                <span>/</span>
+                <span>Подать идею</span>
+            </nav>
+            <h1 class="page-header__title">Подать идею</h1>
+            <p class="page-header__subtitle">
+                Расскажите, как можно улучшить наш город. Ваша идея будет рассмотрена
+                администрацией и вынесена на голосование.
+            </p>
+        </div>
+    </section>
+
+    
+    <section class="submit-section">
+        <div class="container container--narrow">
+            <form class="form" id="idea-form">
+                <div class="form__group">
+                    <label class="form__label" for="title">
+                        Заголовок идеи <span class="form__required">*</span>
+                    </label>
+                    <input type="text" id="title" name="title" class="form__input"
+                        placeholder="Кратко опишите суть идеи" required maxlength="150">
+                    <span class="form__hint">Максимум 150 символов</span>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="category">
+                        Категория <span class="form__required">*</span>
+                    </label>
+                    <select id="category" name="category" class="form__select" required>
+                        <option value="">Выберите категорию</option>
+                    </select>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="description">
+                        Описание <span class="form__required">*</span>
+                    </label>
+                    <textarea id="description" name="description" class="form__textarea"
+                        placeholder="Подробно опишите вашу идею: что предлагаете, где это должно быть реализовано, какую проблему решает"
+                        required rows="6" maxlength="2000"></textarea>
+                    <span class="form__hint">Максимум 2000 символов. Постарайтесь описать идею максимально
+                        подробно.</span>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="file">
+                        Прикрепить файл
+                    </label>
+                    <div class="form__file-wrapper">
+                        <input type="file" id="file" name="file" class="form__file-input"
+                            accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx">
+                        <div class="form__file-label" id="file-label">
+                            <span class="form__file-icon">📎</span>
+                            <span class="form__file-text">Выберите файл или перетащите сюда</span>
+                        </div>
+                    </div>
+                    <span class="form__hint">JPG, PNG, PDF, DOC до 10 МБ. Можно прикрепить фото, схему или
+                        документ.</span>
+                </div>
+
+                <div class="form__agreement">
+                    <label class="checkbox">
+                        <input type="checkbox" id="agreement" required>
+                        <span class="checkbox__mark"></span>
+                        <span class="checkbox__text">
+                            Я согласен с <a href="#">правилами платформы</a> и подтверждаю,
+                            что моя идея не нарушает законодательство РФ
+                        </span>
+                    </label>
+                </div>
+
+                <div class="form__actions">
+                    <button type="submit" class="button button--primary button--large" id="submit-btn">
+                        Отправить на модерацию
+                    </button>
+                </div>
+            </form>
+
+            
+            <div class="submit-success" id="submit-success" style="display: none;">
+                <div class="submit-success__icon">✓</div>
+                <h2 class="submit-success__title">Идея отправлена!</h2>
+                <p class="submit-success__text">
+                    Ваша идея отправлена на модерацию. После проверки администрацией
+                    она появится в ленте для голосования.
+                </p>
+                <div class="submit-success__actions">
+                    <a href="./" class="button button--primary">На главную</a>
+                    <button class="button button--secondary" id="submit-another">
+                        Подать ещё идею
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="info-section">
+        <div class="container container--narrow">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-card__icon"><img src="images/badge-alert.svg" alt="" class="info-card__icon-img">
+                    </div>
+                    <h3 class="info-card__title">Требования к идеям</h3>
+                    <ul class="info-card__list">
+                        <li>Идея должна касаться благоустройства города</li>
+                        <li>Описание должно быть конкретным и понятным</li>
+                        <li>Идея не должна дублировать уже существующие</li>
+                        <li>Соблюдайте нормы законодательства</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <div class="info-card__icon"><img src="images/clock.svg" alt="" class="info-card__icon-img"></div>
+                    <h3 class="info-card__title">Сроки рассмотрения</h3>
+                    <ul class="info-card__list">
+                        <li>Модерация: до 3 рабочих дней</li>
+                        <li>Голосование: 14 дней</li>
+                        <li>Рассмотрение: до 30 дней</li>
+                        <li>Реализация: по индивидуальному плану</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <img src="images/logo.png" alt="Голос Города" class="footer__logo">
+                    <p class="footer__description">
+                        Платформа гражданских инициатив для жителей города
+                    </p>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__heading">Навигация</h4>
+                    <ul>
+                        <li><a href="./">Главная</a></li>
+                        <li><a href="ideas.html">Все идеи</a></li>
+                        <li><a href="submit.html">Подать идею</a></li>
+                        <li><a href="results.html">Реализовано</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__heading">Информация</h4>
+                    <ul>
+                        <li><a href="about.html">О портале</a></li>
+                        <li><a href="news.html">Новости</a></li>
+                        <li><a href="#">Правила</a></li>
+                        <li><a href="#">Контакты</a></li>
+                    </ul>
+                    <div class="footer__social">
+                        <a href="https://t.me/" target="_blank" rel="noopener noreferrer" class="footer__social-link"
+                            title="Telegram">
+                            <img src="images/telegram.svg" alt="Telegram">
+                        </a>
+                        <a href="https://vk.com/" target="_blank" rel="noopener noreferrer" class="footer__social-link"
+                            title="ВКонтакте">
+                            <img src="images/vkontakte.svg" alt="ВКонтакте">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__app">
+                <div class="footer__app-content">
+                    <p class="footer__app-text">Мобильное приложение <span>Голос Города</span></p>
+                    <div class="footer__app-buttons">
+                        <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer"
+                            class="footer__app-btn">
+                            <img src="images/apple_logo.svg" alt="Apple">
+                            <div class="footer__app-btn-text">
+                                <span class="footer__app-btn-label">Скачать в</span>
+                                <span class="footer__app-btn-store">App Store</span>
+                            </div>
+                        </a>
+                        <a href="https://play.google.com" target="_blank" rel="noopener noreferrer"
+                            class="footer__app-btn">
+                            <img src="images/google_play_logo.svg" alt="Google Play">
+                            <div class="footer__app-btn-text">
+                                <span class="footer__app-btn-label">Скачать в</span>
+                                <span class="footer__app-btn-store">Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2025 Голос Города. Школьно-городской проект.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initSubmitPage();
+        });
+    </script>
+</body>
+
+</html>
